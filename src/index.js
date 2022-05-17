@@ -58,14 +58,17 @@
 // 21.   How have other people solved this problem?
 
 function nestedEvenSum(obj) {
-  let counter = 0;
+  let total = 0;
+  // main logic:
   for (let key in obj) {
-    // base case: if (obj[key] === 0) return;
+    // base case:
+    if (obj[key] === 0) return;
     // go through nested object
+    let even = obj[key] % 2 === 0;
+    if (even) {
+      total += even;
+    }
+    return nestedEvenSum(obj[key]);
   }
   // recursion stack:
-  // main logic:
-  // and for each even numbers, increment counter
-  // use modulo to determine if even
-  let even = result % 2 === 0;
 }
