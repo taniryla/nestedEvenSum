@@ -61,20 +61,17 @@ function nestedEvenSum(obj) {
   let total = 0;
   // main logic:
   for (let key in obj) {
-    // base case:
-    if (obj[key] === null) {
-      if (obj[key] % 2 === 0) {
-        total += obj[key];
-        return total;
-      } else {
-        return;
-      }
+    // base case: when there are no more nested objects, we're done
+    if !(typeof obj[key].includes('object') {
+    		return total;
     }
     // go through nested object
-    if (typeof obj[key] === "number" && obj[key] % 2 === 0) {
+    if (typeof obj[key] === 'number' && obj[key] % 2 === 0){
       total += obj[key];
+    } else if (typeof obj[key] === 'object'){
+      nestedEvenSum(obj[key]);
     }
-    return nestedEvenSum(obj[key]);
   }
   // recursion stack:
 }
+
