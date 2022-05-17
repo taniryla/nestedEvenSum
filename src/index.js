@@ -2,10 +2,23 @@ Remember the acronym UPS check
 
 Step One (Understand). We have to understand the problem.
 1. What is the unknown?
+return the sum of all even numbers
+
 2. What are the data inputs?
+array 
 numbers or nested objects
 
 3. Can you restate the problem in your own words?
+
+base case: if (arr.length === 0) return;
+recursion stack: 
+main logic: 
+let counter = 0;
+go through nested object 
+and for each even numbers, increment counter
+use modulo to determine if even
+let even = result % 2 === 0
+
 4. Can the unknown be determined from the data inputs?
 5. Is the data inputs sufficient to determine the unknown? Insufficient? Redundant? Contradictory? 
 6. How should I label important pieces of data input that are a part of the problem?
