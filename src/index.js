@@ -57,21 +57,17 @@
 // 20.  Can you improve the performance?
 // 21.   How have other people solved this problem?
 
-function nestedEvenSum(obj) {
-  let total = 0;
+function nestedEvenSum(obj, total = 0) {
   // main logic:
   for (let key in obj) {
     // base case: when there are no more nested objects, we're done
-    if !(typeof obj[key].includes('object') {
-    		return total;
-    }
-    // go through nested object
-    if (typeof obj[key] === 'number' && obj[key] % 2 === 0){
+    if (typeof obj[key] === "object") {
+      total += nestedEvenSum(obj[key]);
+      // go through nested object
+    } else if (typeof obj[key] === "number" && obj[key] % 2 === 0) {
       total += obj[key];
-    } else if (typeof obj[key] === 'object'){
-      nestedEvenSum(obj[key]);
     }
   }
   // recursion stack:
+  return total;
 }
-
